@@ -5,10 +5,40 @@
     android:layout_height="match_parent"
     tools:context=".Menu1">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    </ScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <include
+                layout="@layout/item"
+                android:id="@+id/hotCoffee"/>
+            <include
+                layout="@layout/item"
+                android:id="@+id/iceCoffee"/>
+            <include
+                layout="@layout/item"
+                android:id="@+id/latte"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <include
+                layout="@layout/item"
+                android:id="@+id/espresso"/>
+            <include
+                layout="@layout/item"
+                android:id="@+id/iceShotCu"/>
+            <include
+                layout="@layout/item"
+                android:id="@+id/water"/>
+        </LinearLayout>
+
+    </LinearLayout>
 
 </FrameLayout>

@@ -5,19 +5,44 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.androidstudy.suwonkiosk.databinding.FragmentMenu1Binding
+import com.androidstudy.suwonkiosk.databinding.ItemBinding
+
+data class menu(var name : String, var price : Int, var image : Int)
 
 class Menu1 : Fragment() {
+    val coffeeName = arrayOf(
+        "hotCoffee", "iceCoffee", "Latte", "Espresso",
+        "IceShotCu", "Water"
+    )
+    val coffeePrice = arrayOf(2000, 3000, 4000, 5000, 6000,
+        7000)
+    lateinit var binding: FragmentMenu1Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_menu1, container, false)
+        binding = FragmentMenu1Binding.inflate(layoutInflater)
+        val coffeeBinding = arrayOf(
+            binding.hotCoffee,
+            binding.iceCoffee,
+            binding.latte,
+            binding.espresso,
+            binding.iceShotCu,
+            binding.water)
+
+        for(i in 0..coffeeBinding.size-1){
+            coffeeBinding[i].name.setText(coffeeName[i])
+            coffeeBinding[i].price.setText(coffeePrice[i].toString())
+            coffeeBinding[i].image.setImageResource(R.drawable.no)
+        }
+
+        return binding.root
     }
 }

@@ -31,5 +31,7 @@ class OrderActivity : AppCompatActivity() {
         binding.btnOrderToMain.setOnClickListener{
             finish()
         }
+
+
     }
 }
