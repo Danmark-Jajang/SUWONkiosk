@@ -3,16 +3,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Menu2"
-    android:background="#55fff000">
+    tools:context=".Menu2">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="MENU 2"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:textSize="40dp"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <include
+                layout="@layout/item"
+                android:id="@+id/strawberry"/>
+            <include
+                layout="@layout/item"
+                android:id="@+id/blueberry"/>
+            <include
+                layout="@layout/item"
+                android:id="@+id/banana"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <include
+                layout="@layout/item"
+                android:id="@+id/choco"/>
+            <include
+                layout="@layout/item"
+                android:id="@+id/milk"/>
+            <include
+                layout="@layout/item"
+                android:id="@+id/cherry"/>
+        </LinearLayout>
+
+    </LinearLayout>
 
 </FrameLayout>
