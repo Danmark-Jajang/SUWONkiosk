@@ -7,9 +7,10 @@ import android.widget.Button
 import android.widget.TableLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.androidstudy.suwonkiosk.databinding.ActivityMainBinding
 import com.androidstudy.suwonkiosk.databinding.ActivityOrderBinding
 import com.google.android.material.tabs.TabLayoutMediator
+
+var menuList = ArrayList<Menu>()
 
 class OrderActivity : AppCompatActivity() {
     lateinit var binding : ActivityOrderBinding
@@ -32,7 +33,6 @@ class OrderActivity : AppCompatActivity() {
 
 
         //주문내역 조회를 위한 recyclerView 초기화
-        var menuList = ArrayList<Menu>()
         binding.rv.adapter = ItemAdapter(menuList)
         binding.rv.layoutManager = LinearLayoutManager(this)
 
@@ -40,6 +40,8 @@ class OrderActivity : AppCompatActivity() {
         binding.btnOrderToMain.setOnClickListener{
             finish()
         }
-
     }
+}
+fun addMenu(name : String, price : Int){
+    menuList.add(Menu(name, price))
 }
