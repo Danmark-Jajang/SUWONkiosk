@@ -52,8 +52,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="5"
-            android:background="#55ff0011">
-
+            android:background="#55ff0011"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/totalPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="총가격 : 0"
+                android:textSize="15dp"
+                android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/buyConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="결제하기"/>
         </LinearLayout>
     </LinearLayout>
 

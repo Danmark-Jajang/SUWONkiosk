@@ -18,8 +18,10 @@ class Menu1 : Fragment() {
         "hotCoffee", "iceCoffee", "Latte", "Espresso",
         "IceShotCu", "Water"
     )
-    val coffeePrice = arrayOf(2000, 3000, 4000, 5000, 6000,
-        7000)
+    val coffeePrice = arrayOf(
+        2000, 3000, 4000, 5000, 6000,
+        7000
+    )
 
     lateinit var binding: FragmentMenu1Binding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,23 +40,18 @@ class Menu1 : Fragment() {
             binding.latte,
             binding.espresso,
             binding.iceShotCu,
-            binding.water)
+            binding.water
+        )
 
-        for(i in 0..coffeeBinding.size-1){
+        for (i in 0..coffeeBinding.size - 1) {
             coffeeBinding[i].name.setText(coffeeName[i])
             coffeeBinding[i].price.setText(coffeePrice[i].toString())
             coffeeBinding[i].image.setImageResource(R.drawable.no)
-            coffeeBinding[i].layout.setOnClickListener{
-                var dialogView = View.inflate(context, R.layout.activity_dialog, null)
-                var dlg = AlertDialog.Builder(context)
-                    .setTitle(coffeeBinding[i].name.text)
-                    .setView(dialogView)
-                    .setPositiveButton("확인", null)
-                    .setNegativeButton("취소", null)
-                dlg.show()
+            coffeeBinding[i].layout.setOnClickListener {
+                (activity as OrderActivity).startDialog(coffeeBinding[i].name.text.toString(), coffeeBinding[i].price.text.toString().toInt())
             }
-        }
 
+        }
         return binding.root
     }
 }

@@ -4,40 +4,74 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Menu1">
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <include
-                layout="@layout/item"
-                android:id="@+id/hotCoffee"/>
-            <include
-                layout="@layout/item"
-                android:id="@+id/iceCoffee"/>
-            <include
-                layout="@layout/item"
-                android:id="@+id/latte"/>
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <include
+                    layout="@layout/item"
+                    android:id="@+id/hotCoffee"/>
+                <include
+                    layout="@layout/item"
+                    android:id="@+id/iceCoffee"/>
+                <include
+                    layout="@layout/item"
+                    android:id="@+id/latte"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <include
+                    layout="@layout/item"
+                    android:id="@+id/espresso"/>
+                <include
+                    layout="@layout/item"
+                    android:id="@+id/iceShotCu"/>
+                <include
+                    layout="@layout/item"
+                    android:id="@+id/water"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <include
+                    layout="@layout/item"/>
+                <include
+                    layout="@layout/item"/>
+                <include
+                    layout="@layout/item"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <include
+                    layout="@layout/item"/>
+                <include
+                    layout="@layout/item"/>
+                <include
+                    layout="@layout/item"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <include
+                    layout="@layout/item"/>
+                <include
+                    layout="@layout/item"/>
+                <include
+                    layout="@layout/item"/>
+            </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <include
-                layout="@layout/item"
-                android:id="@+id/espresso"/>
-            <include
-                layout="@layout/item"
-                android:id="@+id/iceShotCu"/>
-            <include
-                layout="@layout/item"
-                android:id="@+id/water"/>
-        </LinearLayout>
-
-    </LinearLayout>
-
+    </ScrollView>
 </FrameLayout>

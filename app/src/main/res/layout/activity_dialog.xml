@@ -14,25 +14,74 @@
         android:text="menuName"
         android:textSize="30dp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="샷추가"
+        android:textSize="25dp"/>
     <RadioGroup
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/optShotX">
         <RadioButton
-            android:id="@+id/dia1"
+            android:id="@+id/optShotX"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="연하게"/>
+            android:text="기본"/>
         <RadioButton
-            android:id="@+id/dia2"
+            android:id="@+id/optShotO"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="진하게"/>
+            android:text="샷추가(+500)"/>
     </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="온도/얼음"
+        android:textSize="25dp"/>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/optTmpX">
+        <RadioButton
+            android:id="@+id/optTmpX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hot"/>
+        <RadioButton
+            android:id="@+id/optTmpO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ice"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="사이즈업"
+        android:textSize="25dp"/>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/optSizeX">
+        <RadioButton
+            android:id="@+id/optSizeX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X(기본)"/>
+        <RadioButton
+            android:id="@+id/optSizeO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="O(+1000)"/>
+    </RadioGroup>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <Button
-            android:id="@+id/diaOk"
+            android:id="@+id/diaConfirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="확인"/>

@@ -5,16 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.androidstudy.suwonkiosk.databinding.FragmentMenu1Binding
 import com.androidstudy.suwonkiosk.databinding.FragmentMenu2Binding
 
 class Menu2 : Fragment() {
     val coffeeName = arrayOf(
-        "strawberry", "blueberry", "banana", "choco",
-        "milk", "cherry"
+        "hotCoffee", "iceCoffee", "Latte", "Espresso",
+        "IceShotCu", "Water"
     )
-    val coffeePrice = arrayOf(2000, 3000, 4000, 5000, 6000,
-        7000)
-    lateinit var binding : FragmentMenu2Binding
+    val coffeePrice = arrayOf(
+        2000, 3000, 4000, 5000, 6000,
+        7000
+    )
+
+    lateinit var binding: FragmentMenu1Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -23,23 +27,26 @@ class Menu2 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        binding = FragmentMenu2Binding.inflate(layoutInflater)
+        binding = FragmentMenu1Binding.inflate(layoutInflater)
 
         val coffeeBinding = arrayOf(
-            binding.strawberry,
-            binding.blueberry,
-            binding.banana,
-            binding.choco,
-            binding.milk,
-            binding.cherry)
+            binding.hotCoffee,
+            binding.iceCoffee,
+            binding.latte,
+            binding.espresso,
+            binding.iceShotCu,
+            binding.water
+        )
 
-        for(i in 0..coffeeBinding.size-1){
+        for (i in 0..coffeeBinding.size - 1) {
             coffeeBinding[i].name.setText(coffeeName[i])
             coffeeBinding[i].price.setText(coffeePrice[i].toString())
             coffeeBinding[i].image.setImageResource(R.drawable.no)
-        }
+            coffeeBinding[i].layout.setOnClickListener {
+                (activity as OrderActivity).startDialog(coffeeBinding[i].name.text.toString(), coffeeBinding[i].price.text.toString().toInt())
+            }
 
+        }
         return binding.root
     }
 }
