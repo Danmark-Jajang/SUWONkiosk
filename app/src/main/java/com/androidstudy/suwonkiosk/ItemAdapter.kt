@@ -60,7 +60,7 @@ class ItemAdapter(val menuList : ArrayList<Menu>) : RecyclerView.Adapter<ItemAda
                 holder.optTmp.text = ""
 
                 //리스트 제거 후 notify to adapter
-                menuList.removeAt(pos)
+                menuList.removeAt(position)
                 oa.updateTotalPrice(getTotalPrice())
                 oa.binding.rv.adapter?.notifyItemRemoved(pos)
             }

@@ -19,13 +19,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="GO to Order"/>
-
-    <Button
-        android:id="@+id/btn_mainToCart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="GO to Cart"/>
-
+        android:text="주문하기"/>
 </LinearLayout>
