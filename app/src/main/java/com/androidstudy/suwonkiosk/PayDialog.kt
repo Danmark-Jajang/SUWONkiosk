@@ -22,6 +22,8 @@ class PayDialog(var payTotal : Int) : DialogFragment() {
         binding = ActivityPaydialogBinding.inflate(inflater, container, false)
         val view = binding.root
         var lp = payTotal
+        var card : Int = 0
+        var cash : Int = 0
 
         binding.totalPay.text = payTotal.toString()
         binding.leftPay.text = payTotal.toString()
@@ -33,6 +35,12 @@ class PayDialog(var payTotal : Int) : DialogFragment() {
                 if(pay >= lp){
                     pay = lp
                 }
+                if(binding.btnCard.isChecked){
+                    card += pay
+                }
+                else if(binding.btnCash.isChecked){
+                    cash += pay
+                }
                 lp -= pay
                 binding.leftPay.text = lp.toString()
 
@@ -41,7 +49,7 @@ class PayDialog(var payTotal : Int) : DialogFragment() {
                 Toast.makeText(this.context, "숫자를 입력하시오", Toast.LENGTH_SHORT).show()
             }
             if(lp==0){
-                Toast.makeText(context, "구매해주셔서 감사합니다", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "구매해주셔서 감사합니다, 카드:${card}원, 현금:${cash}", Toast.LENGTH_SHORT).show()
                 (activity as OrderActivity).finishOrder()
                 dismiss()
             }
@@ -49,6 +57,8 @@ class PayDialog(var payTotal : Int) : DialogFragment() {
         }
 
         binding.cancel.setOnClickListener {
+            card = 0
+            cash = 0
             dismiss()
         }
 
