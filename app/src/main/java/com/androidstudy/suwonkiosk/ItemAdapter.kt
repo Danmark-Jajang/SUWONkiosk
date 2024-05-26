@@ -27,21 +27,21 @@ class ItemAdapter(val menuList : ArrayList<Menu>) : RecyclerView.Adapter<ItemAda
         holder.price.text = menuList[position].totalPrice.toString()
         holder.count.text = menuList[position].count.toString()
 
-        if(menuList[position].optSize!=""){
+        if(menuList[position].opt1!=""){
             holder.optSize.visibility = View.VISIBLE
-            holder.optSize.text = menuList[position].optSize
+            holder.optSize.text = menuList[position].opt1
         }
         else holder.optSize.visibility = View.GONE
 
-        if(menuList[position].optShot!=""){
+        if(menuList[position].opt2!=""){
             holder.optShot.visibility = View.VISIBLE
-            holder.optShot.text = menuList[position].optShot
+            holder.optShot.text = menuList[position].opt2
         }
         else holder.optShot.visibility = View.GONE
 
-        if(menuList[position].optTmp!=""){
+        if(menuList[position].opt3!=""){
             holder.optTmp.visibility = View.VISIBLE
-            holder.optTmp.text = menuList[position].optTmp
+            holder.optTmp.text = menuList[position].opt3
         }
         else holder.optTmp.visibility = View.GONE
 

@@ -14,13 +14,17 @@ import com.androidstudy.suwonkiosk.databinding.FragmentMenu1Binding
 import com.androidstudy.suwonkiosk.databinding.ItemBinding
 
 class Menu1 : Fragment() {
-    val coffeeName = arrayOf(
-        "hotCoffee", "iceCoffee", "Latte", "Espresso",
-        "IceShotCu", "Water"
+    val penName = arrayOf(
+        "bic", "라미", "juiceup", "제트스트림",
+        "모나미", "멀티펜"
     )
-    val coffeePrice = arrayOf(
-        2000, 3000, 4000, 5000, 6000,
-        7000
+    val penPrice = arrayOf(
+        1000, 2000, 1500, 1500, 1000,
+        1500
+    )
+    val penTag = arrayOf(
+        R.drawable.bic, R.drawable.lamy, R.drawable.juiceup, R.drawable.jetstream, R.drawable.monami,
+        R.drawable.multipen
     )
 
     lateinit var binding: FragmentMenu1Binding
@@ -34,21 +38,21 @@ class Menu1 : Fragment() {
     ): View? {
         binding = FragmentMenu1Binding.inflate(layoutInflater)
 
-        val coffeeBinding = arrayOf(
-            binding.hotCoffee,
-            binding.iceCoffee,
-            binding.latte,
-            binding.espresso,
-            binding.iceShotCu,
-            binding.water
+        val penBinding = arrayOf(
+            binding.lay1,
+            binding.lay2,
+            binding.lay3,
+            binding.lay4,
+            binding.lay5,
+            binding.lay6
         )
 
-        for (i in 0..coffeeBinding.size - 1) {
-            coffeeBinding[i].name.setText(coffeeName[i])
-            coffeeBinding[i].price.setText(coffeePrice[i].toString())
-            coffeeBinding[i].image.setImageResource(R.drawable.no)
-            coffeeBinding[i].layout.setOnClickListener {
-                (activity as OrderActivity).startDialog(coffeeBinding[i].name.text.toString(), coffeeBinding[i].price.text.toString().toInt())
+        for (i in 0..penBinding.size - 1) {
+            penBinding[i].name.setText(penName[i])
+            penBinding[i].price.setText(penPrice[i].toString())
+            penBinding[i].image.setImageResource(penTag[i])
+            penBinding[i].layout.setOnClickListener {
+                (activity as OrderActivity).startDialog(penBinding[i].name.text.toString(), penBinding[i].price.text.toString().toInt())
             }
 
         }

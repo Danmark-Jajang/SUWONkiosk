@@ -3,15 +3,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Menu3"
-    android:background="#5500ff00">
+    tools:context=".Menu3">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <include
+                    layout="@layout/item"
+                    android:id="@+id/lay1"/>
+                <include
+                    layout="@layout/item"
+                    android:id="@+id/lay2"/>
+                <include
+                    layout="@layout/item"
+                    android:id="@+id/lay3"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <include
+                    layout="@layout/item"
+                    android:id="@+id/lay4"/>
+                <include
+                    layout="@layout/item"
+                    android:id="@+id/lay5"/>
+                <include
+                    layout="@layout/item"
+                    android:id="@+id/lay6"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <include
+                    layout="@layout/item"
+                    android:id="@+id/lay7"/>
+                <include
+                    layout="@layout/item"
+                    android:id="@+id/lay8"/>
+                <include
+                    android:visibility="invisible"
+                    layout="@layout/item"/>
+            </LinearLayout>
 
-    <TextView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="MENU 3"
-    android:textColor="@color/black"
-    android:gravity="center"
-    android:textSize="40dp"/>
-
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>

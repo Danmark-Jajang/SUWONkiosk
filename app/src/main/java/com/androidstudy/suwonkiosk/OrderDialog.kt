@@ -25,31 +25,41 @@ class OrderDialog(val menuName : String, val price : Int, var pos : Int = -1) : 
         //확인버튼
         binding.diaConfirm.setOnClickListener{
             var total = price
-            var optShot : String = ""
-            var optTmp : String = ""
-            var optSize : String = ""
+            var opt1 : String = ""
+            var opt2 : String = ""
+            var opt3 : String = ""
 
-            //샷추가
-            if(binding.optShotO.isChecked){
-                total += 500
-                optShot = "-> 샷추가(+500)"
+            //색상
+            if(binding.opt11.isChecked){
+                opt1 = "-> 검정(Black)"
+            }
+            else if(binding.opt12.isChecked){
+                total += 100
+                opt1 = "-> 빨강(Red) (+100)"
+            }
+            else if(binding.opt13.isChecked){
+                total += 100
+                opt1 = "-> 파랑(Blue) (+100)"
             }
 
-            //온도/얼음
-            if(binding.optTmpO.isChecked){
-                optTmp = " -> Ice"
+            //두께
+            if(binding.otp21.isChecked){
+                opt2 = " -> 0.5mm"
             }
-            else if(binding.optTmpX.isChecked){
-                optTmp = "-> Hot"
+            else if(binding.otp22.isChecked){
+                opt2 = "-> 0.7mm"
+            }
+            else if(binding.otp23.isChecked){
+                opt2 = "-> 1.0mm"
             }
 
-            //사이즈업
-            if(binding.optSizeO.isChecked){
+            //선물포장
+            if(binding.optPackageO.isChecked){
                 total += 1000
-                optSize = "-> 사이즈업(+1000)"
+                opt3 = "-> 선물용포장 (+1000)"
             }
 
-            var orderMenu : Menu = Menu(menuName, price, total, optShot, optTmp, optSize, 1)
+            var orderMenu : Menu = Menu(menuName, price, total, opt1, opt2, opt3, 1)
             orderActivity.addMenu(orderMenu, pos)
             orderActivity.binding.rv.adapter?.notifyDataSetChanged()
 

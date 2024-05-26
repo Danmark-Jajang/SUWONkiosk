@@ -17,61 +17,71 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="샷추가"
+        android:text="색상"
         android:textSize="25dp"/>
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checkedButton="@id/optShotX">
+        android:checkedButton="@id/opt11">
         <RadioButton
-            android:id="@+id/optShotX"
+            android:id="@+id/opt11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="기본"/>
+            android:text="검정(Black)"/>
         <RadioButton
-            android:id="@+id/optShotO"
+            android:id="@+id/opt12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="샷추가(+500)"/>
+            android:text="빨강(Red) (+100)"/>
+        <RadioButton
+            android:id="@+id/opt13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="파랑(Blue) (+100)"/>
     </RadioGroup>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="온도/얼음"
+        android:text="두께"
         android:textSize="25dp"/>
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checkedButton="@id/optTmpX">
+        android:checkedButton="@id/otp21">
         <RadioButton
-            android:id="@+id/optTmpX"
+            android:id="@+id/otp21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hot"/>
+            android:text="0.5mm"/>
         <RadioButton
-            android:id="@+id/optTmpO"
+            android:id="@+id/otp22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ice"/>
+            android:text="0.7mm"/>
+        <RadioButton
+            android:id="@+id/otp23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.0mm"/>
     </RadioGroup>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="사이즈업"
+        android:text="선물포장"
         android:textSize="25dp"/>
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checkedButton="@id/optSizeX">
+        android:checkedButton="@id/optPackageX">
         <RadioButton
-            android:id="@+id/optSizeX"
+            android:id="@+id/optPackageX"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="X(기본)"/>
+            android:text="X"/>
         <RadioButton
-            android:id="@+id/optSizeO"
+            android:id="@+id/optPackageO"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="O(+1000)"/>

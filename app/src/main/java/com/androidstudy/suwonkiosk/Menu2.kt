@@ -9,16 +9,22 @@ import com.androidstudy.suwonkiosk.databinding.FragmentMenu1Binding
 import com.androidstudy.suwonkiosk.databinding.FragmentMenu2Binding
 
 class Menu2 : Fragment() {
-    val coffeeName = arrayOf(
-        "hotCoffee", "iceCoffee", "Latte", "Espresso",
-        "IceShotCu", "Water"
+    val sharpName = arrayOf(
+        "수능샤프", "파커샤프", "라미샤프", "펜텔샤프",
+        "스테들러샤프", "쿠루토가샤프", "파일럿샤프", "오토샤프"
     )
-    val coffeePrice = arrayOf(
-        2000, 3000, 4000, 5000, 6000,
-        7000
+    val sharpPrice = arrayOf(
+        1500, 5000, 3000, 4000, 3000,
+        4500, 3000, 5000
+    )
+    val sharpTag = arrayOf(
+        R.drawable.suneng, R.drawable.parker, R.drawable.lamysharp, R.drawable.pentel,
+        R.drawable.staedtler, R.drawable.kurutoga, R.drawable.pilot, R.drawable.ohto
     )
 
-    lateinit var binding: FragmentMenu1Binding
+
+
+    lateinit var binding: FragmentMenu2Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -27,23 +33,25 @@ class Menu2 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMenu1Binding.inflate(layoutInflater)
+        binding = FragmentMenu2Binding.inflate(layoutInflater)
 
-        val coffeeBinding = arrayOf(
-            binding.hotCoffee,
-            binding.iceCoffee,
-            binding.latte,
-            binding.espresso,
-            binding.iceShotCu,
-            binding.water
+        val sharpBinding = arrayOf(
+            binding.lay1,
+            binding.lay2,
+            binding.lay3,
+            binding.lay4,
+            binding.lay5,
+            binding.lay6,
+            binding.lay7,
+            binding.lay8
         )
 
-        for (i in 0..coffeeBinding.size - 1) {
-            coffeeBinding[i].name.setText(coffeeName[i])
-            coffeeBinding[i].price.setText(coffeePrice[i].toString())
-            coffeeBinding[i].image.setImageResource(R.drawable.no)
-            coffeeBinding[i].layout.setOnClickListener {
-                (activity as OrderActivity).startDialog(coffeeBinding[i].name.text.toString(), coffeeBinding[i].price.text.toString().toInt())
+        for (i in 0..sharpBinding.size - 1) {
+            sharpBinding[i].name.setText(sharpName[i])
+            sharpBinding[i].price.setText(sharpPrice[i].toString())
+            sharpBinding[i].image.setImageResource(sharpTag[i])
+            sharpBinding[i].layout.setOnClickListener {
+                (activity as OrderActivity).startDialog(sharpBinding[i].name.text.toString(), sharpBinding[i].price.text.toString().toInt())
             }
 
         }

@@ -17,13 +17,13 @@
                 android:orientation="horizontal">
                 <include
                     layout="@layout/item"
-                    android:id="@+id/hotCoffee"/>
+                    android:id="@+id/lay1"/>
                 <include
                     layout="@layout/item"
-                    android:id="@+id/iceCoffee"/>
+                    android:id="@+id/lay2"/>
                 <include
                     layout="@layout/item"
-                    android:id="@+id/latte"/>
+                    android:id="@+id/lay3"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -31,46 +31,13 @@
                 android:orientation="horizontal">
                 <include
                     layout="@layout/item"
-                    android:id="@+id/espresso"/>
+                    android:id="@+id/lay4"/>
                 <include
                     layout="@layout/item"
-                    android:id="@+id/iceShotCu"/>
+                    android:id="@+id/lay5"/>
                 <include
                     layout="@layout/item"
-                    android:id="@+id/water"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <include
-                    layout="@layout/item"/>
-                <include
-                    layout="@layout/item"/>
-                <include
-                    layout="@layout/item"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <include
-                    layout="@layout/item"/>
-                <include
-                    layout="@layout/item"/>
-                <include
-                    layout="@layout/item"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <include
-                    layout="@layout/item"/>
-                <include
-                    layout="@layout/item"/>
-                <include
-                    layout="@layout/item"/>
+                    android:id="@+id/lay6"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

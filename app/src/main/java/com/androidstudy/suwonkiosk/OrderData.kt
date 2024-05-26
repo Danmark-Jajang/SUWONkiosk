@@ -1,3 +1,9 @@
 package com.androidstudy.suwonkiosk
 
-data class Menu(var menu : String, var price : Int, var totalPrice : Int ,var optShot : String, var optTmp : String, var optSize : String, var count : Int)
+data class Menu(var menu : String,
+                var price : Int,
+                var totalPrice : Int,
+                var opt1 : String,
+                var opt2 : String,
+                var opt3 : String,
+                var count : Int)
