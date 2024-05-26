@@ -25,13 +25,17 @@ class OrderActivity : AppCompatActivity() {
 
         menuList = ArrayList<Menu>()
 
+        val tapList = arrayOf(
+            "볼펜", "샤프", "기타"
+        )
+
         //메뉴표시를 위한 ViewPager2 초기화
         MenuAdapter = FragmentAdapter(this)
         binding.pager.adapter = MenuAdapter
 
         //Tablayout -> ViewPager2의 각 Fragment를 Tab에 동적으로 연결
         TabLayoutMediator(binding.tabLayout, binding.pager){ tab, position ->
-            tab.text = "Menu ${position+1}"
+            tab.text = tapList[position]
         }.attach()
 
 
