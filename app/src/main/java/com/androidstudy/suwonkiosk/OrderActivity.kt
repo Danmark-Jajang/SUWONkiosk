@@ -16,6 +16,7 @@ class OrderActivity : AppCompatActivity() {
     lateinit var binding : ActivityOrderBinding
     lateinit var MenuAdapter: FragmentStateAdapter
     lateinit var menuList : ArrayList<Menu>
+    //총 주문가격 저장용
     var tp = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,8 +24,10 @@ class OrderActivity : AppCompatActivity() {
         binding = ActivityOrderBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //장바구니에 담긴 메뉴 저장용 리스트
         menuList = ArrayList<Menu>()
 
+        //TapLayout 이름 설정용
         val tapList = arrayOf(
             "볼펜", "샤프", "기타"
         )
@@ -48,6 +51,7 @@ class OrderActivity : AppCompatActivity() {
             finishOrder()
         }
 
+        //최종 주문 버튼 기능 추가
         binding.buyConfirm.setOnClickListener {
             if(menuList.size<1){
                 Toast.makeText(applicationContext, "주문내역이 없습니다", Toast.LENGTH_SHORT).show()
@@ -60,6 +64,7 @@ class OrderActivity : AppCompatActivity() {
         }
     }
 
+    //
     fun addMenu(menu : Menu, pos : Int){
         if(pos == -1) {
             menuList.add(menu)

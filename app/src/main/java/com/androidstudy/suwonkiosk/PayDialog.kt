@@ -61,8 +61,6 @@ class PayDialog(var payTotal : Int) : DialogFragment() {
             cash = 0
             dismiss()
         }
-
-
         return view
     }
 
